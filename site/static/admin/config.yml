@@ -6,6 +6,22 @@ public_folder: "img"
 publish_mode: editorial_workflow
 
 collections: # A list of collections the CMS should be able to edit
+  - label: "Blog in English"
+    name: "english_posts"
+    folder: "_posts"
+    filter: {field: "language", value: "en"}
+    fields:
+      - {label: "Language", name: "language", widget: "select", options: ["en", "es"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Content", name: "body", widget: "markdown"}
+  - label: "Blog en Español"
+    name: "spanish_posts"
+    folder: "_posts"
+    filter: {field: "language", value: "es"}
+    fields:
+      - {label: "Lenguaje", name: "language", widget: "select", options: ["en", "es"]}
+      - {label: "Titulo", name: "title", widget: "string"}
+      - {label: "Contenido", name: "body", widget: "markdown"}
   - name: "test" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Test" # Used in the UI, ie.: "New Post"
     folder: "site/content/test" # The path to the folder where the documents are stored
